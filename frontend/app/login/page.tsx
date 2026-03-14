@@ -19,8 +19,7 @@ export default function LoginPage() {
     try {
       await login({ email, password });
       toast.success('Welcome back!');
-      router.push('/dashboard');
-      router.refresh();
+      window.location.href = '/dashboard';
     } catch (err: unknown) {
       toast.error(err instanceof Error ? err.message : 'Login failed');
     } finally {

@@ -21,8 +21,7 @@ export default function RegisterPage() {
     try {
       await register({ name, email, password });
       toast.success('Account created!');
-      router.push('/dashboard');
-      router.refresh();
+      window.location.href = '/dashboard';
     } catch (err: unknown) {
       toast.error(err instanceof Error ? err.message : 'Registration failed');
     } finally {
